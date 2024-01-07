@@ -27,6 +27,24 @@
 //I then need to write a fucntion that differitiates the timeblocks
 //according to when the user is actually usuing the app vs past or present.
 
+function displayTimeCurrent() {
+  const currentTimeElement = document.getElementById('CurrectClock');
+
+ 
+  setInterval(function() {
+   
+    const CurrentTime = dayjs(); 
+
+    
+    const FormatT = CurrentTime.format('HH:mm:ss');
+
+    currentTimeElement.innerText = 'CurrentClock' + FormatT;
+  }, 1000); 
+  console.log("it works")
+}
+
+displayTimeCurrent()
+
 
 
 
