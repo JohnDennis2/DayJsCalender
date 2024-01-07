@@ -26,19 +26,15 @@
 //to display and update the time at the top of the page.
 //I then need to write a fucntion that differitiates the timeblocks
 //according to when the user is actually usuing the app vs past or present.
+//I need to write a function that adds an event listener to the save button.
+//This function needs save events the user puts in each timeblock.
 
 function displayTimeCurrent() {
-  const currentTimeElement = document.getElementById('CurrectClock');
-
- 
-  setInterval(function() {
-   
-    const CurrentTime = dayjs(); 
-
-    
-    const FormatT = CurrentTime.format('HH:mm:ss');
-
-    currentTimeElement.innerText = 'CurrentClock' + FormatT;
+  const currentTimeElement = document.getElementById('Currect-cloc');
+setInterval(function() {
+   const CurrentTime = dayjs(); 
+   const FormatT = CurrentTime.format('HH:mm:ss');
+   currentTimeElement.innerText = 'Current-clock' + FormatT;
   }, 1000); 
   console.log("it works")
 }
