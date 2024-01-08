@@ -28,21 +28,53 @@
 //according to when the user is actually usuing the app vs past or present.
 //I need to write a function that adds an event listener to the save button.
 //This function needs save events the user puts in each timeblock.
-
+//
 function displayTimeCurrent() {
-  const currentTimeElement = document.getElementById('Currect-cloc');
+  const currentTimeElement = document.getElementById('Current-clock');
+  console.log("test one two three ", currentTimeElement )
 setInterval(function() {
    const CurrentTime = dayjs(); 
-   const FormatT = CurrentTime.format('HH:mm:ss');
-   currentTimeElement.innerText = 'Current-clock' + FormatT;
+   const FormatT = CurrentTime.format('h:mm A');
+   currentTimeElement.innerHTML = FormatT;
   }, 1000); 
   console.log("it works")
 }
 
 displayTimeCurrent()
 
+function displayColors (){
+  //target the rows in a list
+  const allDivs = document.querySelectorAll(".row")
+ 
+  const currentHour = dayjs().hour()
+ 
+  for ( let i = 0; i < allDivs.length; i++) {
+
+    const rowHour=allDivs[i].id
+    
+      if (currentHour==rowHour){
+//change rows class to present
+
+  }
 
 
+    
+  
+  }
+  console.log ("here it is", allDivs)
+  
+}
+displayColors ()
+
+ //function saveToLocalStorage() {
+//   const inputText = document.getElementById('saveBtn').value;
+//   localStorage.setItem('savedText', inputText);
+//   alert('event saved!');
+// }
+
+
+// const saveButton = document.getElementById('saveBtn');
+// saveButton.addEventListener('click', saveToLocalStorage);
 
 
 $(function () {
