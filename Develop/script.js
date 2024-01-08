@@ -47,13 +47,15 @@ function displayColors (){
   const allDivs = document.querySelectorAll(".row")
  
   const currentHour = dayjs().hour()
+  const pastHour = dayjs()
  
   for ( let i = 0; i < allDivs.length; i++) {
 
-    const rowHour=allDivs[i].id
-    
-      if (currentHour==rowHour){
+    const rowHour = allDivs[i].id
+
+      if (currentHour == rowHour){
 //change rows class to present
+        rowHour.classlistadd(".present")
 
   }
 
