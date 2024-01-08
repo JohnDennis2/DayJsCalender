@@ -42,37 +42,36 @@ setInterval(function() {
 
 displayTimeCurrent()
 
-function displayColors (){
-  //target the rows in a list
-  const allDivs = document.querySelectorAll(".row")
- 
-  const currentHour = dayjs().hour()
-  const pastHour = dayjs()
- 
-  for ( let i = 0; i < allDivs.length; i++) {
+function displayColors() {
+  // Target the rows in a list
+  const allDivs = document.querySelectorAll(".row");
+  const currentHour = dayjs().hour();
 
-    const rowHour = allDivs[i].id
+  for (let i = 0; i < allDivs.length; i++) {
+    const rowHour = parseInt(allDivs[i].id); // Convert rowHour to an integer
 
-      if (currentHour == rowHour){
-//change rows class to present
-        rowHour.classlistadd(".present")
-
+    if (rowHour === currentHour) {
+      // Change row's class to present
+      allDivs[i].classList.add("present");
+      console.log("ok");
+    } else if (rowHour < currentHour) {
+      allDivs[i].classList.add("past");
+      console.log("good");
+    } else {
+      // rowHour must be greater than currentHour
+      allDivs[i].classList.add("future");
+      console.log("we did it");
+    }
   }
-
-
-    
-  
-  }
-  console.log ("here it is", allDivs)
-  
 }
-displayColors ()
 
- //function saveToLocalStorage() {
-//   const inputText = document.getElementById('saveBtn').value;
-//   localStorage.setItem('savedText', inputText);
-//   alert('event saved!');
-// }
+displayColors();
+
+ function saveToLocalStorage() {
+   const inputText = document.getElementById('saveBtn').value;
+   localStorage.setItem('savedText', inputText);
+   alert('event saved!');
+   }
 
 
 // const saveButton = document.getElementById('saveBtn');
