@@ -23,7 +23,7 @@
 
 
 //first I need to write a function that includes day.js 
-//to display and update the time at the top of the page.
+//to display and update the date and time at the top of the page.
 //I then need to write a fucntion that differitiates the timeblocks
 //according to when the user is actually usuing the app vs past or present.
 //I need to write a function that adds an event listener to the save button.
