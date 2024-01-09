@@ -31,7 +31,7 @@
 //
 function displayTimeCurrent() {
   const currentTimeElement = document.getElementById('Current-clock');
-  console.log("test one two three ", currentTimeElement )
+  
 setInterval(function() {
    const CurrentTime = dayjs(); 
    const FormatT = CurrentTime.format('h:mm A');
@@ -67,15 +67,25 @@ function displayColors() {
 
 displayColors();
 
+
+
+
  function saveToLocalStorage() {
-   const inputText = document.getElementById('saveBtn').value;
-   localStorage.setItem('savedText', inputText);
+   
+  const input = document.querySelectorAll.classList.inputText("description")
+    localStorage.setItem('savedText', inputText);
+
    alert('event saved!');
-   }
+  
+    showText();
+  }
 
+function ShowText () {
+  const DisplayDiv = document.getElementById()
+}
 
-// const saveButton = document.getElementById('saveBtn');
-// saveButton.addEventListener('click', saveToLocalStorage);
+const saveButton = document.getElementById('saveBtn');
+saveButton.addEventListener('click', saveToLocalStorage);
 
 
 $(function () {
