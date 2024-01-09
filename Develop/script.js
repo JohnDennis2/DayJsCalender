@@ -29,13 +29,29 @@
 //I need to write a function that adds an event listener to the save button.
 //This function needs save events the user puts in each timeblock.
 //
+
+function displayCurrentDate () {
+
+  const currentDateElement = document.getElementById ("current-date")
+
+  const currentDate = dayjs();
+   const formatD = currentDate.format ('MMMM D YYYY');
+   currentDateElement.innerHTML = formatD
+
+console.log ("hooray")
+
+}
+
+displayCurrentDate()
+
 function displayTimeCurrent() {
+
   const currentTimeElement = document.getElementById('Current-clock');
   
 setInterval(function() {
-   const CurrentTime = dayjs(); 
-   const FormatT = CurrentTime.format('h:mm A');
-   currentTimeElement.innerHTML = FormatT;
+   const currentTime = dayjs(); 
+   const formatT = currentTime.format('h:mm A');
+   currentTimeElement.innerHTML = formatT;
   }, 1000); 
   console.log("it works")
 }
@@ -48,18 +64,19 @@ function displayColors() {
   const currentHour = dayjs().hour();
 
   for (let i = 0; i < allDivs.length; i++) {
+
     const rowHour = parseInt(allDivs[i].id); // Convert rowHour to an integer
 
     if (rowHour === currentHour) {
       // Change row's class to present
-      allDivs[i].classList.add(".present");
+      allDivs[i].classList.add("present");
       console.log("ok");
     } else if (rowHour < currentHour) {
-      allDivs[i].classList.add(".past");
+      allDivs[i].classList.add("past");
       console.log("good");
     } else {
       // rowHour must be greater than currentHour
-      allDivs[i].classList.add(".future");
+      allDivs[i].classList.add("future");
       console.log("we did it");
     }
   }
@@ -68,19 +85,21 @@ function displayColors() {
 displayColors();
 
 function saveToLocalStorage() {
+// need the user input to save in local storage
 
-  
   const input = document.getElementById("description").value;
     localStorage.setItem('savedText', input);
 
    alert('event saved!');
+  console.log("working")
+    
+  showText();
   
-    showText();
   }
 
-function ShowText () {
+function showText () {
   const displayDiv = document.getElementById("descrition");
-  const savedText = localStorage.getItem('savedText');
+  const savedText = document.getElementById('savedText');
 
   if (savedText) {
 
@@ -89,10 +108,10 @@ function ShowText () {
 }
 }
 
-ShowText ()
+showText ()
 
 const saveButton = document.getElementById('saveBtn');
-saveButton.addEventListener('click', saveToLocalStorage());
+saveButton.addEventListener('click', saveToLocalStorage);
 
 
 //$(function () {

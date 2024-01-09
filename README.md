@@ -1,4 +1,4 @@
-# Work Day Scheduler Starter Code
+Work Day Scheduler
 
 This app was task to use DayJs to make a calender that users could input events and task they need to do.
 The app displays the current time in a text block at the top of the page.
