@@ -82,37 +82,54 @@ function displayColors() {
   }
 }
 
-displayColors();
+
 
 function saveToLocalStorage() {
-// need the user input to save in local storage
-
-  const input = document.getElementById("description").value;
-    localStorage.setItem('savedText', input);
-
-   alert('event saved!');
-  console.log("working")
-    
+  const input = document.getElementById("savedText").value;
+  localStorage.setItem('savedText', input);
+  alert('event saved!');
+  console.log("working");
   showText();
-  
-  }
+}
 
-function showText () {
-  const displayDiv = document.getElementById("descrition");
-  const savedText = document.getElementById('savedText');
-
+function showText() {
+  const displayDiv = document.getElementById("savedText");
+  const savedText = localStorage.getItem('savedText');
   if (savedText) {
-
-    displayDiv.textContent = 'savedText:${savedEvent}' ;
-
+    displayDiv.textContent = `savedText: ${savedText}`;
+  }
 }
+function saveToLocalStorage9() {
+  const input = $("#description")
+  console.log(input.siblings)
+  localStorage.setItem('9',input.val());
+  alert('event saved!');
+  console.log("working");
+  showText();
 }
 
-showText ()
+function showText9() {
+  const displayDiv = document.getElementById("description");
+  const savedText = localStorage.getItem('9');
+  if (savedText) {
+    displayDiv.textContent =  savedText
+  }
+}
+displayColors();
+showText();
+showText9();
 
-const saveButton = document.getElementById('saveBtn');
-saveButton.addEventListener('click', saveToLocalStorage);
 
+$("#saveBtn").click(function(){ console.log("lol")
+  saveToLocalStorage()
+});
+
+$("#btn9").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+// const saveButton = document.getElementById('saveBtn');
+// console.log(saveButton)
+// saveButton.on('click',saveToLocalStorage);
 
 //$(function () {
 
