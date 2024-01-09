@@ -122,8 +122,10 @@ function showText9() {
   }
 }
 
+
+
 function saveToLocalStorage10() {
-  const input = $("#txt-10")
+  const input = $("#txt10")
   console.log(input.siblings)
   localStorage.setItem('10',input.val());
   alert('event saved!');
@@ -131,9 +133,9 @@ function saveToLocalStorage10() {
   showText();
 }
 
-function showText12() {
-  const displayDiv = document.getElementById("text-12");
-  const savedText = localStorage.getItem('12');
+function showText10() {
+  const displayDiv = document.getElementById("text-10");
+  const savedText = localStorage.getItem('10');
   if (savedText) {
     displayDiv.textContent =  savedText
   }
@@ -148,8 +150,8 @@ function saveToLocalStorage12() {
   showText();
 }
 
-function showText10() {
-  const displayDiv = document.getElementById("description");
+function showText12() {
+  const displayDiv = document.getElementById("text-12");
   const savedText = localStorage.getItem('10');
   if (savedText) {
     displayDiv.textContent =  savedText
@@ -162,6 +164,7 @@ showText9();
 showText10();
 showText12();
 
+// I ran out of time to refactor this code below, I could definitely make it DRYer
 
 $("#saveBtn").click(function(){ console.log("lol")
   saveToLocalStorage()
@@ -179,9 +182,9 @@ $("#btn11").click(function(){ console.log("lol")
   saveToLocalStorage9()
 });
 
-$("#btn12").click(function(){ console.log("lol")
-  saveToLocalStorage9()
-});
+// $("#btn12").click(function(){ console.log("lol")
+//   saveToLocalStorage9()
+// });
 
 $("#btn12").click(function(){ console.log("lol")
   saveToLocalStorage9()
