@@ -30,6 +30,11 @@
 //This function needs save events the user puts in each timeblock.
 //
 
+
+
+
+// function that dispalys the current date
+
 function displayCurrentDate () {
 
   const currentDateElement = document.getElementById ("current-date")
@@ -41,7 +46,7 @@ function displayCurrentDate () {
 console.log ("hooray")
 
 }
-
+// Function that shows current time
 displayCurrentDate()
 
 function displayTimeCurrent() {
@@ -82,7 +87,7 @@ function displayColors() {
   }
 }
 
-
+//This function gets local storage
 
 function saveToLocalStorage() {
   const input = document.getElementById("savedText").value;
@@ -91,7 +96,7 @@ function saveToLocalStorage() {
   console.log("working");
   showText();
 }
-
+// this funtion displays the local storage in the textarea
 function showText() {
   const displayDiv = document.getElementById("savedText");
   const savedText = localStorage.getItem('savedText');
