@@ -52,14 +52,14 @@ function displayColors() {
 
     if (rowHour === currentHour) {
       // Change row's class to present
-      allDivs[i].classList.add("present");
+      allDivs[i].classList.add(".present");
       console.log("ok");
     } else if (rowHour < currentHour) {
-      allDivs[i].classList.add("past");
+      allDivs[i].classList.add(".past");
       console.log("good");
     } else {
       // rowHour must be greater than currentHour
-      allDivs[i].classList.add("future");
+      allDivs[i].classList.add(".future");
       console.log("we did it");
     }
   }
@@ -67,13 +67,11 @@ function displayColors() {
 
 displayColors();
 
+function saveToLocalStorage() {
 
-
-
- function saveToLocalStorage() {
-   
-  const input = document.querySelectorAll.classList.inputText("description")
-    localStorage.setItem('savedText', inputText);
+  
+  const input = document.getElementById("description").value;
+    localStorage.setItem('savedText', input);
 
    alert('event saved!');
   
@@ -81,23 +79,22 @@ displayColors();
   }
 
 function ShowText () {
-  const displayDiv = document.querySelector("desciption");
+  const displayDiv = document.getElementById("descrition");
   const savedText = localStorage.getItem('savedText');
 
-  If (savedText) {
-    displayDiv.textContent = 'savedText'
-  } else {
-    displayDiv.textContent = ''
-  }
-}
+  if (savedText) {
 
+    displayDiv.textContent = 'savedText:${savedEvent}' ;
+
+}
+}
 
 ShowText ()
 
 const saveButton = document.getElementById('saveBtn');
-saveButton.addEventListener('click', saveToLocalStorage);
+saveButton.addEventListener('click', saveToLocalStorage());
 
 
-$(function () {
+//$(function () {
 
-});
+//})
