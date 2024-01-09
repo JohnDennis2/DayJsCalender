@@ -105,6 +105,39 @@ function showText() {
     displayDiv.textContent = savedText
   }
 }
+// trying a different way...
+
+function saveToLocalStorage() {
+  const textInput = document.getElementById("#txt10").value;
+  
+  try {
+    localStorage.setItem('#txt10', textInput);
+    alert('Text saved!');
+  } catch (error) {
+    console.error('Error saving text:', error);
+  }
+}
+
+function showText() {
+  const textDisplay = document.getElementById("#txt10");
+  
+  try {
+    const savedText = localStorage.getItem('#txt10');
+    
+    if (savedText) {
+      textDisplay.textContent = savedText;
+    }
+  } catch (error) {
+    console.error('Error retrieving text:', error);
+  }
+}
+
+
+
+
+// this is a function using j query
+
+
 function saveToLocalStorage9() {
   const input = $("#description")
   console.log(input.siblings)
@@ -121,6 +154,9 @@ function showText9() {
     displayDiv.textContent =  savedText
   }
 }
+displayColors();
+showText();
+showText9();
 
 
 
@@ -140,6 +176,8 @@ function showText10() {
     displayDiv.textContent =  savedText
   }
 }
+showText();
+showText10();
 
 function saveToLocalStorage12() {
   const input = $("#txt-12")
@@ -152,17 +190,13 @@ function saveToLocalStorage12() {
 
 function showText12() {
   const displayDiv = document.getElementById("text-12");
-  const savedText = localStorage.getItem('10');
+  const savedText = localStorage.getItem('12');
   if (savedText) {
     displayDiv.textContent =  savedText
   }
 }
 
-displayColors();
-showText();
-showText9();
-showText10();
-showText12();
+
 
 // I ran out of time to refactor this code below, I could definitely make it DRYer
 
