@@ -71,7 +71,8 @@ function displayColors() {
   for (let i = 0; i < allDivs.length; i++) {
 
     const rowHour = parseInt(allDivs[i].id); // Convert rowHour to an integer
-
+    console.log("rowHour:", rowHour); // Add this line
+    console.log("currentHour:", currentHour);
     if (rowHour === currentHour) {
       // Change row's class to present
       allDivs[i].classList.add("present");
@@ -101,7 +102,7 @@ function showText() {
   const displayDiv = document.getElementById("savedText");
   const savedText = localStorage.getItem('savedText');
   if (savedText) {
-    displayDiv.textContent = `savedText: ${savedText}`;
+    displayDiv.textContent = savedText
   }
 }
 function saveToLocalStorage9() {
@@ -120,9 +121,46 @@ function showText9() {
     displayDiv.textContent =  savedText
   }
 }
+
+function saveToLocalStorage10() {
+  const input = $("#txt-10")
+  console.log(input.siblings)
+  localStorage.setItem('10',input.val());
+  alert('event saved!');
+  console.log("working");
+  showText();
+}
+
+function showText12() {
+  const displayDiv = document.getElementById("text-12");
+  const savedText = localStorage.getItem('12');
+  if (savedText) {
+    displayDiv.textContent =  savedText
+  }
+}
+
+function saveToLocalStorage12() {
+  const input = $("#txt-12")
+  console.log(input.siblings)
+  localStorage.setItem('12',input.val());
+  alert('event saved!');
+  console.log("working");
+  showText();
+}
+
+function showText10() {
+  const displayDiv = document.getElementById("description");
+  const savedText = localStorage.getItem('10');
+  if (savedText) {
+    displayDiv.textContent =  savedText
+  }
+}
+
 displayColors();
 showText();
 showText9();
+showText10();
+showText12();
 
 
 $("#saveBtn").click(function(){ console.log("lol")
@@ -130,6 +168,42 @@ $("#saveBtn").click(function(){ console.log("lol")
 });
 
 $("#btn9").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn10").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn11").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn12").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn12").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn1").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn2").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn3").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn4").click(function(){ console.log("lol")
+  saveToLocalStorage9()
+});
+
+$("#btn5").click(function(){ console.log("lol")
   saveToLocalStorage9()
 });
 // const saveButton = document.getElementById('saveBtn');
