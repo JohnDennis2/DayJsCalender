@@ -81,8 +81,18 @@ displayColors();
   }
 
 function ShowText () {
-  const DisplayDiv = document.getElementById()
+  const displayDiv = document.querySelector("desciption");
+  const savedText = localStorage.getItem('savedText');
+
+  If (savedText) {
+    displayDiv.textContent = 'savedText'
+  } else {
+    displayDiv.textContent = ''
+  }
 }
+
+
+ShowText ()
 
 const saveButton = document.getElementById('saveBtn');
 saveButton.addEventListener('click', saveToLocalStorage);
